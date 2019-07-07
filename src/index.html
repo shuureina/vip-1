@@ -32,95 +32,258 @@
                 <div class="header-area">
                     <div class="top-area">杭州市</div>
                 </div>
-                <ul class="top-nav-tool">
+                <ul class="top-nav-tool" id="J-topNavTool">
                     <li class="wp-my">
-                        <ul class="my-list">
+                        <ul id="J_head_log" class="login-before login_before user-no-cookies">
                             <li class="wp-user" id="J-wp-user">
-                                <span>
-                                   <a href="">请登录</a>
+                                <span class="user-in" id="J_user_logined" style="display: none;">
+                    <a id="J_viplevel" href="//iclub.vip.com/user_info/vmarkinfo_list" target="_blank" class="user-in-vip"><i></i></a>
+                    <a href="//myi.vip.com/index.html" target="_blank" class="user-in-name"></a>
+                    <i class="ico-dis"></i>
+                </span>
+                                <p class="hidden top-nav-inf" id="J_user_unLogin">
+                                    <span class="top-nav-inf-pc">
+                        <a href="#" class="J_header_lnkLogin">
+                        <em class="name"></em><span class="u-name-slash">/</span> 请登录
+                                    </a>
+                                    <i class="ico-dis"></i>
+                                    </span>
+                                </p>
+                                <span class="user-noid" id="J_user_noId">
+                    <a href="https://passport.vip.com/login" class="J_header_lnkLogin">请登录</a>
+                </span>
 
-                              </span>
-                                <!--user 二级导航 -->
+                                <div class="top-nav-dis user-infor" id="J_userInfo">
+                                    <i class="ico-arw-bodder" id="J-ico-arw-bodder" style="width: 71px;"></i>
+                                    <div class="top-nav-inf clearfix">
+                                        <span class="top-nav-pic-avater"></span>
+                                        <div class="top-nav-pic-infs">
+                                            <p id="J_uInfo_name">
+                                                <a href="https://passport.vip.com/login" class="J_header_lnkLogin">
+                                                    <span id="J_uInfo_welcom">您好！</span> <span class="top-nav-login">[请登录]</span>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="top-nav-pic clearfix">
+                                        <a class="top-nav-pic-avater" id="J_topNavUserAvatar" href="//myi.vip.com/index.html" target="_blank"></a>
+                                        <div class="top-nav-pic-infs">
+                                            <a href="//myi.vip.com/index.html" target="_blank" id="J_nPic_name" class="top-nav-nickname"></a>
+                                            <a href="#" class="top-nav-logout" id="J_header_lnkLogOut">[退出]</a>
+                                        </div>
+                                    </div>
+                                    <p class="top-nav-list">
+                                        <span>
+                            <a href="//fav.vip.com/index.php?r=/fav/brand" target="_blank">我的收藏</a>
+                        </span>
+                                        <span>
+                            <a href="//order.vip.com/order/orderlist" target="_blank">我的订单
+                                <i id="J-header-myOrder" class="top-nav-order-num"></i>
+                            </a>
+                        </span>
+                                        <span>
+                            <a href="//myvpal.vip.com/pc/wallet" target="_blank">零钱</a>
+                        </span>
+                                        <span>
+                            <a href="//myi.vip.com/coupons.html" target="_blank">我的优惠券</a>
+                        </span>
+                                        <span>
+                            <a href="//myi.vip.com/vipmoney.html"  target="_blank">我的唯品币</a>
+                        </span>
+                                        <span>
+                            <a href="//lc.vip.com/?ep=pshouyexiala0115lc" target="_blank">唯品金融</a>
+                        </span>
+                                    </p>
+                                </div>
                             </li>
-                            <li class="regster-hasnoname" id="J_Register_hasnoname">
-                                <span>
-                                   <a href="">注册</a>
-                               </span>
-                            </li>
+                            <li id="J_Register_hasnoname" class="register_hasnoname">
+                                <a href="https://passport.vip.com/register" class="i-link J_header_lnkRegister">注册</a> </li>
                         </ul>
                     </li>
-                    <li class="wp-sign">
+                    <li id="J_signin_wrap" class="wp-sign" style="display: list-item;">
                         <span>
-                              签到有礼
+                                                        <i id="J_signin_icon" class="wp-sign-icon"></i><span id="J_signin_text">签到有礼</span>
                         </span>
-
+                        <span id="J_signin_success_tips" class="wp-sign-tip"><i class="wp-sign-tip-icon"></i>签到成功</span>
+                        <div id="J_signin_container">
+                            <div id="J_signin_unSigned" class="ui-tooltips ui-tooltips-top-arrow head-sign head-sign-in">
+                                <div class="ui-tooltips-arrow">
+                                    <i class="arrow arrow-out">◆</i>
+                                    <i class="arrow">◆</i>
+                                </div>
+                                <div class="head-sign-content">
+                                    <div class="head-sign-day">
+                                        <div class="head-sign-day-anime">
+                                            <div class="J_action_day head-sign-day-item">
+                                                <span class="head-sign-day-icon-gray head-sign-day-icon-left-radius-gary"></span>
+                                                <span class="head-sign-day-icon-arrow head-sign-day-icon-left-radius-arrow"></span>
+                                                <span class="head-sign-day-icon-pink"></span>
+                                                <span class="head-sign-day-icon-nike"></span>
+                                                <span class="head-sign-day-everyday">1天</span>
+                                            </div>
+                                            <div class="J_action_day head-sign-day-item">
+                                                <span class="head-sign-day-icon-gray"></span>
+                                                <span class="head-sign-day-link-inside"></span>
+                                                <span class="head-sign-day-icon-arrow"></span>
+                                                <span class="head-sign-day-icon-pink"></span>
+                                                <span class="head-sign-day-icon-nike"></span>
+                                                <span class="head-sign-day-everyday">2天</span>
+                                            </div>
+                                            <div class="J_action_day head-sign-day-item">
+                                                <span class="head-sign-day-icon-gray"></span>
+                                                <span class="head-sign-day-link-inside"></span>
+                                                <span class="head-sign-day-icon-arrow"></span>
+                                                <span class="head-sign-day-icon-pink"></span>
+                                                <span class="head-sign-day-icon-nike"></span>
+                                                <span class="head-sign-day-everyday">3天</span>
+                                            </div>
+                                            <div class="J_action_day head-sign-day-item">
+                                                <span class="head-sign-day-icon-gray"></span>
+                                                <span class="head-sign-day-link-inside"></span>
+                                                <span class="head-sign-day-icon-arrow"></span>
+                                                <span class="head-sign-day-icon-pink"></span>
+                                                <span class="head-sign-day-icon-nike"></span>
+                                                <span class="head-sign-day-everyday">4天</span>
+                                            </div>
+                                            <div class="J_action_day head-sign-day-item">
+                                                <span class="head-sign-day-icon-gray"></span>
+                                                <span class="head-sign-day-link-inside"></span>
+                                                <span class="head-sign-day-icon-arrow"></span>
+                                                <span class="head-sign-day-icon-pink"></span>
+                                                <span class="head-sign-day-icon-nike"></span>
+                                                <span class="head-sign-day-everyday">5天</span>
+                                            </div>
+                                            <div class="J_action_day head-sign-day-item">
+                                                <span class="head-sign-day-icon-gray"></span>
+                                                <span class="head-sign-day-link-inside"></span>
+                                                <span class="head-sign-day-icon-arrow"></span>
+                                                <span class="head-sign-day-icon-pink"></span>
+                                                <span class="head-sign-day-icon-nike"></span>
+                                                <span class="head-sign-day-everyday">6天</span>
+                                            </div>
+                                            <div class="J_action_day head-sign-day-item">
+                                                <span class="head-sign-day-icon-gray head-sign-day-icon-right-radius-gary"></span>
+                                                <span class="head-sign-day-link-inside"></span>
+                                                <span class="head-sign-day-icon-arrow head-sign-day-icon-right-radius-arrow"></span>
+                                                <span class="head-sign-day-icon-pink"></span>
+                                                <span class="head-sign-day-icon-nike"></span>
+                                                <span class="head-sign-day-everyday">7天</span>
+                                            </div>
+                                        </div>
+                                        <span id="J_prize_container" class="head-sign-day-msg"></span>
+                                        <span class="head-sign-day-link"></span>
+                                    </div>
+                                    <div class="head-sign-msg">
+                                        <a id="J_signin_btn" href="javascript:;" role="button" class="ui-btn-small ui-btn-primary head-sign-msg-sign">签到</a>
+                                        <a id="J_signin_href" href="//iclub.vip.com/" class="head-sign-msg-txt" target="_blank" title="">每天签到送惊喜，
+                        
+                        连续签到更享心动奖励
+                        
+                    </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="J_signin_error_container"></div>
                     </li>
                     <li class="wp-order">
-                        <span>
-                            <a href="javascript:;">我的订单</a>
-                    </span>
+                        <span class="order-in">
+                                <a href="//order.vip.com/order/orderlist" target="_blank">我的订单</a>
+                            </span>
                     </li>
-                    <li class="wp-service wp-fav-nav">
-                        <span>
-
-                           <a href="javascript:;">我的特卖
-
-                              <svg class="icon icon1" aria-hidden="true">
-  <use xlink:href="#icon-sjt"></use>
-</svg>
-   <!-- <svg class="icon icon2" aria-hidden="true">
-  <use xlink:href="#icon-shangjiantou"></use>
-</svg> -->
-                           </a>
-                       </span>
+                    <li class="wp-service wp-fav-nav" id="J-favs">
+                        <span class="service-in">
+                                <a href="//fav.vip.com/brand" target="_blank">我的特卖</a>
+                                <i class="ico-dis"></i>
+                            </span>
+                        <div class="top-nav-dis service-infor fav-nav-drop">
+                            <i class="ico-arw-bodder"></i>
+                            <p class="top-nav-list">
+                                <span><a href="//fav.vip.com/goods" target="_blank">商品收藏</a></span>
+                                <span><a href="//fav.vip.com/brand" target="_blank" >品牌收藏</a></span>
+                                <span><a href="//fav.vip.com/browse" target="_blank">我的足迹</a></span>
+                            </p>
+                        </div>
                     </li>
                     <li class="wp-service wp-member">
-                        <span>
-
-                           <a href="javascript:;">会员俱乐部
-
-                              <svg class="icon icon1" aria-hidden="true">
-  <use xlink:href="#icon-sjt"></use>
-</svg>
-   <!-- <svg class="icon icon2" aria-hidden="true">
-  <use xlink:href="#icon-shangjiantou"></use>
-</svg> -->
-                           </a>
-                       </span>
+                        <span class="service-in">
+                                <a href="//iclub.vip.com/" target="_blank">
+                                    会员俱乐部
+                                </a>
+                                <i class="ico-dis"></i>
+                            </span>
+                        <div class="top-nav-dis service-infor">
+                            <i class="ico-arw-bodder"></i>
+                            <p class="top-nav-list">
+                                <span>
+                                        <a href="//iclub.vip.com/" target="_blank">俱乐部首页</a>
+                                    </span>
+                                <span>
+                                        <a href="//iclub.vip.com/" target="_blank">唯品币兑换</a>
+                                    </span>
+                            </p>
+                        </div>
                     </li>
-                    <li class="wp-service wp-custorm">
-                        <span>
-
-                            <a href="javascript:;">客户服务
-
-                               <svg class="icon icon1" aria-hidden="true">
-  <use xlink:href="#icon-sjt"></use>
-</svg>
-   <!-- <svg class="icon icon2" aria-hidden="true">
-  <use xlink:href="#icon-shangjiantou"></use>
-</svg> -->
-                            </a>
-                        </span>
+                    <li class="wp-service">
+                        <span class="service-in">
+                                客户服务
+                                <i class="ico-dis"></i>
+                            </span>
+                        <div class="top-nav-dis service-infor">
+                            <i class="ico-arw-bodder"></i>
+                            <p class="top-nav-list">
+                                <span>
+                                        <a href="//acs.vip.com/" target="_blank">联系客服</a>
+                                    </span>
+                                <span>
+                                        <a href="//help.vip.com/" target="_blank">帮助中心</a>
+                                    </span>
+                                <span>
+                                        <a href="//acs.vip.com/index.html" target="_blank">服务中心</a>
+                                    </span>
+                                <span>
+                                        <a href="//survey.vip.com/932697?lang=zh-Hans" target="_blank">知识产权投诉</a>
+                                    </span>
+                            </p>
+                        </div>
                     </li>
-                    <li class="wp-phone">
-                        <span>
-
-                           <a href="javascript:;"> <i></i>手机版</a>
-                        </span>
+                    <li class="wp-phone" id="J_phone_tip">
+                        <span class="phone-in"><a href="//m.vip.com/app" target="_blank"><i class="ico-mob"></i> 手机版</a></span>
+                        <div class="top-nav-dis phone-infor" id="J_phoneTip_con" style="display: none;">
+                            <i class="ico-arw-bodder"></i>
+                            <span class="phone-close hidden" id="J_phone_close"></span>
+                            <div class="tc" id="J_phoneTips_wrap">
+                                <a href="//m.vip.com/app/?f=nav" target="_blank">
+                                    <img class="J_qrcode_img" src="https://b.appsimg.com/2016/06/17/863/1466134037230.jpg" width="161" height="161" alt="二维码">
+                                </a>
+                                <p>
+                                    <a href="//m.vip.com/app/?f=nav" target="_blank">随时逛 及时抢</a>
+                                </p>
+                            </div>
+                        </div>
                     </li>
-                    <li class="wp-more">
-                        <span>
-
-
-                            <a href="javascript:;">更多
-
-                               <svg class="icon icon1" aria-hidden="true">
-  <use xlink:href="#icon-sjt"></use>
-</svg>
-  
-                            </a>
-                        </span>
+                    <li class="wp-service wp-business">
+                        <span class="service-in">
+                                <a href="###">更多</a>
+                                <i class="ico-dis"></i>
+                            </span>
+                        <div class="top-nav-dis service-infor-more">
+                            <i class="ico-arw-bodder"></i>
+                            <h5 class="service-more-hd clearfix">合作专区</h5>
+                            <p class="top-nav-list clearfix">
+                                <a href="//mst.vip.com/ByMIo4p5mM1-pZjNGBTysQ.php?client=vipcms&amp;wapid=mst_2667903&amp;extra_type=1" target="_blank">联名卡申请</a>
+                                <a href="//vipcard.vip.com/" target="_blank">唯品卡</a>
+                                <a href="//mst.vip.com/ByMIo4p5mM1-pZjNGBTysQ.php?client=vipcms&amp;wapid=mst_2667903&amp;extra_type=1" target="_blank">支付专区</a>
+                            </p>
+                            <h5 class="service-more-hd clearfix service-more-hd2">关于我们</h5>
+                            <p class="top-nav-list clearfix service-more-p">
+                                <a href="//viva.vip.com/act/supportInvestment-pc?wapid=vivac_812&amp;lang=en" target="_blank">Sell on vip</a>
+                                <a href="//viva.vip.com/act/supportInvestment-pc?wapid=vivac_812" target="_blank">品牌招商</a>
+                                <a href="//blog.vip.com/" target="_blank">官方博客</a>
+                            </p>
+                        </div>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -258,7 +421,7 @@
                                     <use xlink:href="#icon-arrow"></use>
                                   </svg></i>
                                                 </a>
-                            <!-- <div class="channel-item-group" id="J-channel-item-group">
+                            <div class="channel-item-group" id="J-channel-item-group">
                                 <a class="main-nav-atag ">
                                 </a>
                                 <div class="channel-item">
@@ -271,7 +434,7 @@
                                                                    家居                                                </a>
                                 </div>
                                 <div class="channel-item">
-                                    <a href="https://mst.vip.com/3z0xj8i3Xa2KVWdMREkYrw.php?client=vipcms&amp;mst_page_type=guide&amp;mst_cdi=1&amp;wapid=mst_1775178&amp;extra_type=1&amp;extra_from_tab=1" target="_blank" class="channel-more-itemlink">
+                                    <a href="" target="_blank" class="channel-more-itemlink">
                                                                    生活                                                </a>
                                 </div>
                                 <div class="channel-item">
@@ -290,7 +453,7 @@
                                     <a href="//fupin.vip.com" target="_blank" class="channel-more-itemlink">
                                                                    扶贫                                                </a>
                                 </div>
-                            </div> -->
+                            </div>
                         </li>
 
                     </ul>
