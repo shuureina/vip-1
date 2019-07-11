@@ -1,4 +1,5 @@
 @charset "utf-8";
+$color: #f10180;
 .z-amount-trigger-disabled .line-horizontal,
 .z-amount-trigger-disabled:hover .line-horizontal,
 .z-amount-trigger-disabled:visited .line-horizontal {
@@ -82,17 +83,19 @@ html.f-hide {
 }
 
 .cart-tab .cart-tab-item-selected {
-    color: #f10180;
+    color: $color;
     padding-bottom: 12px;
-    border-bottom: 3px solid #f10180;
+    border-bottom: 3px solid$color;
 }
 
 .cart-tab-item .cart-tab-item-countDown {
-    color: #f10180;
+    color: $color;
     padding-left: 10px;
 }
 
 .cart-tab-mid {
+    position: relative;
+    bottom: -23px;
     display: inline-block;
     width: 1px;
     height: 20px;
@@ -192,7 +195,7 @@ html.f-hide {
 }
 
 .orders-vip .orders-hd {
-    border-left-color: #f10180;
+    border-left-color: $color;
 }
 
 .orders-hd ul {
@@ -216,7 +219,7 @@ html.f-hide {
 
 .orders-vip .product-item .checkbox-text,
 .orders-vip .product-item .product-item-title {
-    color: #f10180;
+    color: $color;
 }
 
 .m-orders .price-item {
@@ -343,7 +346,7 @@ html.f-hide {
 }
 
 .orders-table .u-saletype-0 {
-    color: #f10180;
+    color: $color;
 }
 
 .m-product .product-title a {
@@ -353,7 +356,7 @@ html.f-hide {
 }
 
 .m-product .product-title a:hover {
-    color: #f10180;
+    color: $color;
 }
 
 .orders-table .price-item .m-price {
@@ -365,7 +368,7 @@ html.f-hide {
 
 .goods-cxoprice-tag {
     margin-right: 5px;
-    color: #f10180;
+    color: $color;
 }
 
 .orders-table .m-price strong {
@@ -457,7 +460,7 @@ html.f-hide {
 
 .orders-table .subtotal-item .subtotal-price {
     display: block;
-    color: #f10180;
+    color: $color;
 }
 
 .m-orders .actions-item {
@@ -470,7 +473,9 @@ html.f-hide {
 }
 
 .m-orders-total {
+    height: 170px;
     border: 1px solid #ccc;
+    margin-bottom: 30px;
 }
 
 .c-order-button-del {
@@ -511,7 +516,7 @@ html.f-hide {
 .c-price-panel-quantity {
     margin-right: 3px;
     margin-left: 3px;
-    color: #f10180;
+    color: $color;
     font-family: Arial;
 }
 
@@ -570,7 +575,7 @@ html.f-hide {
 }
 
 .orders-total-ft .orders-total-amount .m-price {
-    color: #f10180;
+    color: $color;
 }
 
 .orders-total-ft .orders-total-amount .u-price {
@@ -600,31 +605,64 @@ html.f-hide {
 
 .orders-total-ft-placeholder {
     position: absolute;
-    left: 152px;
+    left: 153px;
     width: 960px;
-    text-align: right;
     height: 58px;
     line-height: 50px;
     padding: 5px 10px;
-    border: 1px solid #ed2787;
+    border: 1px solid #e2e1e1;
+    background-color: #f3f3f3;
     box-sizing: border-box;
+    a {
+        width: 250px;
+        height: 56px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        line-height: 54px;
+    }
 }
 
 .orders-total-amount {
     display: inline-block;
-    margin-right: 10px;
+    position: absolute;
+    right: 274px;
 }
 
 .orders-total-amount-text {
     font-size: 20px;
     color: #666;
     .m-price {
-        color: #f10180;
+        color: $color;
     }
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
     .m-inline-block {
         letter-spacing: -5px;
+    }
+}
+
+.empty {
+    display: none;
+    position: relative;
+    height: 600px;
+    width: 960px;
+    text-align: center;
+    margin: 0 auto;
+    p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 40px;
+        width: 100%;
+        margin-top: -20px;
+        margin-left: -480px;
+        font-size: 20px;
+        line-height: 40px;
+        a {
+            text-decoration: underline;
+            color: $color;
+        }
     }
 }

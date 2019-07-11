@@ -60,15 +60,23 @@
         $('.pop').css('display', 'block');
         $('.close').on('click', function() {
             $('.pop').css('display', 'none');
+            clearInterval(judgetimer);
         })
         let count = 5;
 
-        let judgetimer = setTimeout(function() {}, 1000);
+        let judgetimer = setInterval(function() {
+            $('.time').html(count);
+            if (count <= 0) {
+                clearInterval(judgetimer);
+                $('.pop').css('display', 'none');
+            }
+            count--;
+        }, 1000);
     });
-    // $('.num-add').on('click', function() {
-    //     addnum++
-    //     arrnum.push(addnum);
+    $('.num-add').on('click', function() {
+        addnum++
+        arrnum.push(addnum);
 
-    // });
+    });
 
 }();
