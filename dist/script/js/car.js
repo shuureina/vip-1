@@ -1,0 +1,1 @@
+"use strict";console.log(m),console.log(s),$(".footer").load("footer.html");
