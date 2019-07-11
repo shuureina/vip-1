@@ -1,34 +1,43 @@
-$(function() {
+;
+! function() {
+    const phpurl = 'http://10.31.158.73:8080/vip/php/';
+    const $JbItemdata = $('.shop-sort .J-brand-item-data');
 
     $.ajax({
-        type: 'get',
-        url: 'http://10.31.158.73:8080/vip/php/details.php',
+        url: phpurl + 'index.php',
         dateType: 'json',
-        success: function(datajson) {
-            const $fbcList = $('.fbc-list');
-            const $fbcTriggercon = $('.fbc-trigger-con');
 
-            let $dlen = JSON.parse(datajson).length;
-            let $listtemp = '';
-            let $contemp = '';
-            for (let i = 0; i <= $dlen; i++) {
-                let $pic = JSON.parse(datajson);
-                let $fbcTriggerconli = $('.fbc-trigger-con li');
-                let $fbcListitem = $('.fbc-list li');
+    }).done(function(data) {
+        let dataarr = JSON.parse(data);
+        console.log(dataarr);
+        var $html = '<div>';
 
-                $listtemp = ` <li class="fbc-list-item">
-                    <a href="http://10.31.158.73:8080/vip/src/details.html?sid=${$pic[i].picid}" target="_blank" class="fbc_list_img" alt="">
-                        <img src="${$pic[i].url}" alt="${$pic[i].title}">
-                    </a>
-                </li>
-               `;
-                $contemp = ` <li>${$pic[i].title}</li>`;
-                $fbcList.append($listtemp);
-                $fbcListitem.first().addClass('show');
-                $fbcTriggercon.append($contemp);
-                $fbcTriggerconli.first().append("<span>|</span>");
-            }
+        $.each(dataarr, function(index, value) {
+            $html += `<div class="brand-item">
+                        <a href="http://10.31.158.73:8080/vip/src/details.html?picid=${value.picid}" class="brand-item-hover" target="_blank">
+                            <img src="${value.indexurl}" alt="${value.title}">
+                            <div class="brand-info"><span class="brand-name" title="${value.title}">${value.title}</span>
+                                <div class="brand-discount-pms">
+                                    <span class="brand-discount"><span class="dis-num">${value.sell}</span>折起</span>
+                                </div>
+                            </div>
+                        </a>
+                        <span class="ui-btn-fav-like" role="button">
+                                <a class="vipFont"><svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shoucang11
+                                "></use>
+                                </svg></a>
+                                <span class="fav-hidden">收藏品牌</span>
+                        </span>
+                    </div>
+                   
+                    `;
+        });
+        $html += '<div>';
+        $JbItemdata.html($html);
 
-        }
-    })
-});
+    });
+
+
+
+}();

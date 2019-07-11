@@ -107,11 +107,11 @@ a:hover {
 }
 
 .fl {
-    float: left;
+    float: left
 }
 
 .fr {
-    float: right;
+    float: right
 }
 
 .mr5 {
@@ -635,7 +635,7 @@ a.plusLink.on:hover i {
 
 .links a {
     display: inline;
-    margin-right: 0;
+    margin-right: 0
 }
 
 .linkBoxTitle {
@@ -759,7 +759,7 @@ body.regSingle {
     border: 1px solid #9cbfef;
     padding: 3px;
     width: 110px;
-    z-index: 100;
+    z-index: 100
 }
 
 .auth-tips-single {
@@ -1322,7 +1322,7 @@ span {
 a.logo#for-cascade-login-link {
     width: 315px;
     height: 73px;
-    background: url(../img/normalLogin_sprite-hash-d7529c51.png) no-repeat 0 0!important
+    background: url(../img/normalLogin_sprite-hash-d7529c51.png) no-repeat 0 0 !important
 }
 
 .control-group .ui-input {
@@ -1409,12 +1409,6 @@ a.logo#for-cascade-login-link {
     height: 40px;
     line-height: 40px;
     margin-top: 4px
-}
-
-input#submit {
-    border: none;
-    background-color: #f10180;
-    color: #fff;
 }
 
 .adjust-success .ui-input-success {
@@ -1570,7 +1564,7 @@ input#submit {
 
 .control-group .u-other-item {
     width: 300px;
-    height: 19px;
+    height: 19px
 }
 
 #reg-form-wrapper .third_label {
@@ -1837,21 +1831,21 @@ input#submit {
 
 .c-login-panel-footer {
     padding-right: 30px;
-    padding-left: 30px;
+    padding-left: 30px
 }
 
 .c-login-third {
     position: relative;
     z-index: 1;
     padding-top: 30px;
-    padding-bottom: 15px;
+    padding-bottom: 15px
 }
 
 .c-login-third-special {
     position: relative;
     z-index: 1;
     margin-bottom: 12px;
-    height: 40px;
+    height: 40px
 }
 
 .c-login-third-wechat-wrapper {
@@ -1860,13 +1854,13 @@ input#submit {
     margin-right: auto;
     margin-left: auto;
     width: 40px;
-    height: 40px;
+    height: 40px
 }
 
 .c-login-third-wechat {
     display: inline-block;
     width: 40px;
-    height: 40px;
+    height: 40px
 }
 
 .c-login-third-wechat-icon {
@@ -1876,7 +1870,7 @@ input#submit {
     height: 40px;
     display: inline-block;
     position: relative;
-    z-index: 3;
+    z-index: 3
 }
 
 .c-login-third-wechat-text {
@@ -1887,7 +1881,7 @@ input#submit {
     width: 40px;
     text-align: center;
     line-height: 40px;
-    font-size: 14px;
+    font-size: 14px
 }
 
 .c-register-link {
@@ -1895,16 +1889,16 @@ input#submit {
     z-index: 2;
     color: #333;
     line-height: 24px;
-    font-size: 14px;
+    font-size: 14px
 }
 
 .c-login-third-main {
-    margin-left: -10px;
+    margin-left: -10px
 }
 
 .c-login-third-main-list {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: top
 }
 
 .c-login-third-main-item {
@@ -1912,14 +1906,14 @@ input#submit {
     position: relative;
     padding-right: 11px;
     padding-left: 10px;
-    line-height: 24px;
+    line-height: 24px
 }
 
 .is-login-third-item-disabled .c-login-third-link,
 .is-login-third-item-disabled .c-login-third-link:active,
 .is-login-third-item-disabled .c-login-third-link:hover {
     cursor: default;
-    color: #999;
+    color: #999
 }
 
 .c-login-third-main-item:after {
@@ -1930,7 +1924,7 @@ input#submit {
     margin-top: -5px;
     height: 10px;
     content: '';
-    border-left: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0
 }
 
 .c-login-third-more-button {
@@ -1938,29 +1932,29 @@ input#submit {
     margin-left: 20px;
     vertical-align: top;
     line-height: 24px;
-    color: #999;
+    color: #999
 }
 
 .c-login-third-more-button .c-login-third-more-collapse {
-    display: none;
+    display: none
 }
 
 .c-login-third-more-button .i-arrow-down,
 .c-login-third-more-button .i-arrow-up {
     margin-left: 5px;
     vertical-align: top;
-    line-height: 24px;
+    line-height: 24px
 }
 
 .c-login-third-more {
     display: none;
-    padding-top: 17px;
+    padding-top: 17px
 }
 
 .c-login-third-other-list {
     margin-left: -15px;
     width: 330px;
-    font-size: 0;
+    font-size: 0
 }
 
 .c-login-third-other-item {
@@ -1971,11 +1965,11 @@ input#submit {
     min-width: 66px;
     vertical-align: top;
     text-align: center;
-    font-size: 12px;
+    font-size: 12px
 }
 
 .c-login-third-more-button:hover {
-    color: #666;
+    color: #666
 }
 
 .z-u-form-item-success .ui-input {
@@ -2028,7 +2022,7 @@ input#submit {
 }
 
 :-ms-input-placeholder.vipsc_code_input {
-    color: #999!important;
+    color: #999 !important;
     text-overflow: ellipsis
 }
 
@@ -2060,5 +2054,5 @@ input#submit {
 
 .show {
     visibility: visible;
-    opacity: 1;
+    opacity: 1
 }

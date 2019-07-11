@@ -797,7 +797,7 @@
                             font-size: 14px;
                             color: #fff;
                         }
-                       
+                        
                         .main-nav .head-inner {
                             z-index: 100;
                         }
@@ -942,7 +942,6 @@
                             width: 471px;
                             margin-left: 96px;
                             overflow: hidden;
-                            *zoom: 1;
                             word-break: keep-all
                         }
                         
@@ -954,6 +953,7 @@
                         .cate-part-col1 .cate-detail .cate-detail-con a:hover {
                             color: #f10180
                         }
+                        
                         .main-nav-be-fixedtrans {
                             position: fixed;
                             width: 100%;

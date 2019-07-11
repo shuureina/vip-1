@@ -313,6 +313,10 @@
     
     .brand-info {
         margin: 18px 0 0 10px;
+        width: 490px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
     
     .brand-name {
@@ -366,8 +370,8 @@
     
     .shop-sort-ft {
         border-top: 1px solid #e8e8e8;
-        a:hover{
-            color:#fff;
+        a:hover {
+            color: #fff;
         }
     }
     

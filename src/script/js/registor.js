@@ -11,8 +11,8 @@ $(function() {
                 remote: { //把前端loginName 传给后端
                     url: 'http://10.31.158.73:8080/vip/php/registor.php', //后台处理程序
                     type: 'post', //数据发送方式
-                    data: 'json', //接收数据的格式
-                    dataType: { //要传递的数据
+                    dataType: 'json', //接收数据的格式
+                    data: { //要传递的数据
                         username: function() {
                             return $('#J_mobile_name').val();
                         }
