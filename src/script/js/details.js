@@ -3,7 +3,8 @@
     //1.获取对应详情页的id
     var picid = location.search.substring(1).split('=')[1];
     const phpurl = 'http://10.31.158.73:8080/vip/php/';
-    var addnum = 0;
+    var valnum = Number($("#count").val());
+    var addnum = 1;
     //2.将当前的id传给后端获取对应的数据
     $.ajax({
         type: "post",
@@ -40,6 +41,7 @@
             arrnum = $.cookie('cookienum').split(','); //存储商品的数量
         }
     }
+    console.log(valnum);
     $('#sub-btn').on('click', function() { //点击加入购物车按钮
         var $picid = $(this).parents('.product').find('.smallpic').attr('picid'); //
         cookietoString() //获得cookietoString存储数据
@@ -52,7 +54,7 @@
             $.cookie('cookienum', arrnum.toString(), 7);
 
         } else { //不返回-1 存在
-            var num = Number(arrnum[$.inArray($picid, arrid)]) + Number($("#count").val()); //累加
+            var num = Number(arrnum[$.inArray($picid, arrid)]) + valnum; //累加
             arrnum[$.inArray($picid, arrid)] = num;
             // console.log(arrnum);
             $.cookie('cookienum', arrnum.toString(), 7); //再次存入cookie中
@@ -74,9 +76,27 @@
         }, 1000);
     });
     $('.num-add').on('click', function() {
-        addnum++
-        arrnum.push(addnum);
-
+        // addnum++;
+        $("#count").val(function() {
+            valnum = Number($(this).val()) + addnum;
+            return valnum;
+        })
     });
+
+    $('.num-cut').on('click', function() {
+        // addnum++;
+
+        if (valnum >= 1) {
+            $("#count").val(function() {
+                valnum = Number($(this).val()) - addnum;
+                return valnum;
+            });
+        } else {
+
+            $('.num-cut').css('cursor', 'not-allowed').off();
+        }
+    });
+
+
 
 }();
