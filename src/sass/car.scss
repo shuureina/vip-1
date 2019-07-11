@@ -598,6 +598,31 @@ html.f-hide {
     font-size: 14px;
 }
 
+.orders-total-ft-placeholder {
+    position: absolute;
+    left: 152px;
+    width: 960px;
+    text-align: right;
+    height: 58px;
+    line-height: 50px;
+    padding: 5px 10px;
+    border: 1px solid #ed2787;
+    box-sizing: border-box;
+}
+
+.orders-total-amount {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.orders-total-amount-text {
+    font-size: 20px;
+    color: #666;
+    .m-price {
+        color: #f10180;
+    }
+}
+
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
     .m-inline-block {
         letter-spacing: -5px;

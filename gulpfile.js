@@ -24,7 +24,7 @@ gulp.task('comfilesass', function() {
 });
 //压缩png图片
 gulp.task('uglifypng', () => {
-    return gulp.src('src/img/*.{png,gif,ico}')
+    return gulp.src('src/img/*.{png,jpg,gif,ico}')
         .pipe(imagemin({
             optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
             progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
@@ -33,7 +33,7 @@ gulp.task('uglifypng', () => {
         }))
         .pipe(gulp.dest('dist/img'));
 });
-//压缩js
+//压缩/fonts 的js
 gulp.task('uglifyjs', () => {
     return gulp.src('src/fonts/font_7htqrw1cgww/*.js')
         .pipe(uglify())
@@ -41,14 +41,14 @@ gulp.task('uglifyjs', () => {
 });
 //es6转es5并压缩
 gulp.task('babeljs', () => {
-    return gulp.src('src/script/js/*.js')
+    return gulp.src('src/script/*/*.js')
         .pipe(babel({
             presets: ['es2015']
         }))
         .pipe(uglify())
-        .pipe(gulp.dest('dist/script/js'));
+        .pipe(gulp.dest('dist/script/'));
 });
 gulp.task('default', function() {
     //default:默认名称，编译时可以省略
-    watch(['src/*.html', 'src/sass/*.scss', 'src/img/*.png', 'src/fonts/font_7htqrw1cgww/*.js', 'src/script/js/*.js'], gulp.parallel('uglifyhtml', 'comfilesass', 'uglifypng', 'uglifyjs', 'babeljs'));
+    watch(['src/*.html', 'src/sass/*.scss', 'src/img/*.{png,jpg,gif,ico}', 'src/fonts/font_7htqrw1cgww/*.js', 'src/script/*/*.js'], gulp.parallel('uglifyhtml', 'comfilesass', 'uglifypng', 'uglifyjs', 'babeljs'));
 })

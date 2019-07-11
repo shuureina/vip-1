@@ -1,4 +1,5 @@
 @charset "utf-8";
+$color:#f10180;
 // .productlist {
 //     overflow: hidden;
 //     margin-top: 50px;
@@ -224,13 +225,56 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 &:hover {
-                    border: 1px solid #f10180;
+                    border: 1px solid $color;
                     ;
                 }
                 img {
                     width: 54px;
                 }
             }
+        }
+    }
+}
+
+.pop {
+    display: none;
+    width: 200px;
+    height: 200px;
+    border: 1px solid $color;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -100px;
+    box-shadow: 2px 2px 5px 0 $color;
+    text-align: center;
+    .close {
+        position: absolute;
+        right: 8px;
+        font-size: 20px;
+        color: #f10180;
+        cursor: pointer;
+    }
+    h4 {
+        height: 30px;
+        color: $color;
+        font-size: 18px;
+        font-weight: 800;
+        margin-top: 20px;
+    }
+    .gow {
+        height: 20px;
+        padding: 10px;
+        a {
+            display: inline-block;
+            text-decoration: underline;
+            padding: 10px;
+        }
+    }
+    .countdown {
+        margin: 10px;
+        span {
+            color: $color;
         }
     }
 }

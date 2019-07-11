@@ -29,14 +29,7 @@
                             <a href="javascript:;" class="left">&lt;</a>
                             <div class="movelist">
                                 <ul>
-                                    <!-- <li><img src="https://img13.360buyimg.com/jdcms/s300x300_jfs/t1/18684/10/6705/85643/5c617705Ea04b2479/44530044809bad66.jpg!q90!cc_170x170.webp" alt=""></li>
-                                    <li><img src="https://img13.360buyimg.com/jdcms/s300x300_jfs/t1/18684/10/6705/85643/5c617705Ea04b2479/44530044809bad66.jpg!q90!cc_170x170.webp" alt=""></li>
-                                    <li><img src="https://img13.360buyimg.com/jdcms/s300x300_jfs/t1/18684/10/6705/85643/5c617705Ea04b2479/44530044809bad66.jpg!q90!cc_170x170.webp" alt=""></li>
-                                    <li><img src="https://img13.360buyimg.com/jdcms/s300x300_jfs/t1/18684/10/6705/85643/5c617705Ea04b2479/44530044809bad66.jpg!q90!cc_170x170.webp" alt=""></li>
-                                    <li><img src="https://img13.360buyimg.com/jdcms/s300x300_jfs/t1/18684/10/6705/85643/5c617705Ea04b2479/44530044809bad66.jpg!q90!cc_170x170.webp" alt=""></li>
-                                    <li><img src="https://img13.360buyimg.com/jdcms/s300x300_jfs/t1/18684/10/6705/85643/5c617705Ea04b2479/44530044809bad66.jpg!q90!cc_170x170.webp" alt=""></li>
-                                    <li><img src="https://img13.360buyimg.com/jdcms/s300x300_jfs/t1/18684/10/6705/85643/5c617705Ea04b2479/44530044809bad66.jpg!q90!cc_170x170.webp" alt=""></li>
-                                    <li><img src="https://img13.360buyimg.com/jdcms/s300x300_jfs/t1/18684/10/6705/85643/5c617705Ea04b2479/44530044809bad66.jpg!q90!cc_170x170.webp" alt=""></li> -->
+
                                 </ul>
                             </div>
                             <a href="javascript:;" class="right">&gt;</a>
@@ -55,12 +48,12 @@
                 <div class="price">唯品价￥<span></span></div>
                 <div class="choosebtn">
                     <div class="choose-amount">
-                        <a href="javascript" class="num-cut">-</a>
-                        <input type="text" value="1">
-                        <a href="javascript" class="num-add">+</a>
+                        <a href="javascript:;" class="num-cut">-</a>
+                        <input type="text" value="1" id="count">
+                        <a href="javascript:;" class="num-add">+</a>
 
                     </div>
-                    <a href="#">
+                    <a href="#" id="sub-btn">
                         <button type="submit" class="ui-btn-large ui-btn-primary ui-btn-loading" id="J-cartAdd-submit">
                                     <span class="ui-btn-loading-before">
                                                     <i class="vipFont if-shopping-bag ui-btn-left-icon"></i>
@@ -76,8 +69,18 @@
             </div>
 
         </div>
-        <script src="./script/thirdplugins/jquery.min.js"></script>
-        <script src="./script/js/details.js"></script>
+        <div class="pop">
+            <i class="close">x</i>
+            <h4>成功加入购物车</h4>
+            <div class="gow">
+                <a href="./index.html">继续购物</a><a href="./car.html">去购物车</a>
+            </div>
+            <div class="countdown"><span class="time"></span>秒后关闭弹窗,留在详情页</div>
+        </div>
+    </div>
+    <script src="./script/thirdplugins/jquery.min.js"></script>
+    <script src="./script/thirdplugins/jquery.cookie.js"></script>
+    <script src="./script/js/details.js"></script>
 </body>
 
 
