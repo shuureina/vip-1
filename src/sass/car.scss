@@ -258,6 +258,7 @@ html.f-hide {
     margin-left: auto;
     padding-top: 5px;
     width: 928px;
+    display: none;
 }
 
 .orders-table td {
@@ -472,6 +473,10 @@ html.f-hide {
     position: relative;
 }
 
+.coupons-wrapper {
+    display: none;
+}
+
 .m-orders-total {
     height: 170px;
     border: 1px solid #ccc;
@@ -605,7 +610,7 @@ html.f-hide {
 
 .orders-total-ft-placeholder {
     position: absolute;
-    left: 153px;
+    left: 160px;
     width: 960px;
     height: 58px;
     line-height: 50px;
@@ -644,10 +649,11 @@ html.f-hide {
 }
 
 .empty {
-    display: none;
+    // display: none;
     position: relative;
-    height: 600px;
+    height: 100px;
     width: 960px;
+    border: 1px solid #e2e1e1;
     text-align: center;
     margin: 0 auto;
     p {

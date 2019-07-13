@@ -30,7 +30,7 @@
                     <div class="c-register-switch-login">
                         已注册可
                         <!--
-                         --><a href="http://10.31.158.73:8080/vip/src/login.html" id="J_normal_loginlink" class="u-text-highlight">直接登录</a>
+                         --><a href="login.html" id="J_normal_loginlink" class="u-text-highlight">直接登录</a>
                     </div>
                     <h3 class="c-register-title">会员注册</h3>
                 </div>
@@ -43,20 +43,39 @@
                             <p class="info"><i class="vipFont if-sigh"></i><span class="info-msg"></span></p>
                         </div>
 
-                        <form id="reg_mobile_form" action="http://10.31.158.73:8080/vip/php/registor.php" method="post" autocomplete="off" class="register-form">
+                        <form id="reg_form" action="http://10.31.158.73:8080/vip/php/registor.php" method="post" autocomplete="off" class="register-form">
+                            <div class="control-group control-group0 has-form-item-icon  clearfix">
+                                <div class="ui-form-item-group">
+                                    <input type="text" class="ui-input ipt-name" id="J_user_name" name="loginName" placeholder="请输入用户名">
+                                    <span class="u-input-warning vipFont if-wrong"></span>
+                                    <span class="u-input-success vipFont if-success"></span>
+                                    <span class="c-icon  c-icon-account  c-icon-form"></span>
+                                </div>
+                                <div class="u-input-tip"><span class="text"></span></div>
+                            </div>
+
                             <div class="control-group control-group1 has-form-item-icon  clearfix">
                                 <div class="ui-form-item-group">
-                                    <input type="text" class="ui-input ipt-phone" id="J_mobile_name" name="loginName" placeholder="请输入手机号码">
+                                    <input type="text" class="ui-input ipt-phone" id="J_mobile_phone" name="loginPhone" placeholder="请输入手机号码">
                                     <span class="u-input-warning vipFont if-wrong"></span>
                                     <span class="u-input-success vipFont if-success"></span>
                                     <span class="c-icon  c-icon-mobile  c-icon-form"></span>
                                 </div>
                                 <div class="u-input-tip"><span class="text"></span></div>
                             </div>
+                            <div class="control-group control-group2 has-form-item-icon  clearfix">
+                                <div class="ui-form-item-group">
+                                    <input type="text" class="ui-input ipt-email" id="J_email" name="loginEmail" placeholder="请输入邮箱">
+                                    <span class="u-input-warning vipFont if-wrong"></span>
+                                    <span class="u-input-success vipFont if-success"></span>
+                                    <span class="c-icon  c-icon-mobile  c-icon-form"></span>
 
+                                </div>
+                                <div class="u-input-tip"><span class="text"></span></div>
+                            </div>
                             <div class="control-group" id="J_verify_code_mobile"></div>
 
-                            <div class="control-group control-group2 has-form-item-icon  clearfix">
+                            <div class="control-group control-group3 has-form-item-icon  clearfix">
                                 <div class="ui-form-item-group adjust-tip-icon">
                                     <input type="text" id="J_mobile_code" class="ui-input ipt-verify-code" name="pvcode" placeholder="请输入验证码">
                                     <!--
@@ -68,7 +87,7 @@
                                 <div class="u-input-tip"><span class="text"></span></div>
                             </div>
 
-                            <div class="control-group control-group3  has-form-item-icon  clearfix">
+                            <div class="control-group control-group4  has-form-item-icon  clearfix">
                                 <div class="ui-form-item-group">
                                     <input type="password" class="ui-input" id="J_mobile_pwd" name="password" maxlength="20" placeholder="密码由6-20位字母，数字和符号组合">
                                     <span class="u-input-warning vipFont if-wrong"></span>
@@ -89,7 +108,7 @@
                                 </div>
                             </div>
 
-                            <div class="control-group control-group4 has-form-item-icon  clearfix">
+                            <div class="control-group control-group5 has-form-item-icon  clearfix">
                                 <div class="ui-form-item-group">
                                     <input type="password" class="ui-input confirm-pwd" id="J_mobile_confirm_pwd" name="confirmPassword" maxlength="20" placeholder="请再次输入上面的密码">
                                     <span class="u-input-warning vipFont if-wrong"></span>
@@ -99,7 +118,7 @@
                                 <div class="u-input-tip"><span class="text"></span></div>
                             </div>
 
-                            <div class="control-group clearfix">
+                            <div class="control-group control-group6 clearfix">
                                 <div class="ui-form-item-group">
                                     <span class="ui-checkbox mr0">
                         <input type="checkbox" id="J_mobile_agree" name="agree" class="ui-checkbox-normal" value="1"><label for="J_mobile_agree" class="ui-checkbox-simulation"></label>
@@ -109,12 +128,14 @@
                                 <div class="u-input-tip"><span class="text"></span></div>
                             </div>
 
-                            <div class="control-group mb30 clearfix">
-                                <a href="#" role="button" id="J_mobile_reg_button" class="ui-btn-large ui-btn-primary ui-btn-loading reg-form-btn form-submit">
+                            <div class="control-group control-group7 mb30 clearfix">
+                                <input type="submit" id="J_mobile_reg_button" class="ui-btn-large ui-btn-primary ui-btn-loading reg-form-btn form-submit" name="submit" value="立即注册">
+                                <!-- <a href="#" role="button" id="J_mobile_reg_button" class="ui-btn-large ui-btn-primary ui-btn-loading reg-form-btn form-submit">
                                     <span class="ui-btn-loading-before"><input type="submit" value="立即注册" id="submit">
                                     </span>
+                                   
                                     <span class="ui-btn-loading-after"><i class="ii-loading-gray-16x16"></i><span class="ui-btn-txt">处理中...</span></span>
-                                </a>
+                                </a> -->
                             </div>
                         </form>
                     </div>

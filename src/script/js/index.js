@@ -3,6 +3,18 @@
     const phpurl = 'http://10.31.158.73:8080/vip/php/';
     const $SJbItemdata = $('.shop-sort .J-brand-item-data');
     const $CJbItemdata = $('.shop-coming .J-brand-item-data');
+    $(window).on('scroll', function() {
+
+        let $imgarr = $('.shop-sort .J-brand-item-data').find('img');
+        // console.log($imgarr);
+        $.each($imgarr, function(index, element) {
+            // console.log(element);
+            $(element).lazyload({
+                effect: 'fadeIn'
+            });
+
+        })
+    });
     $.ajax({
         url: phpurl + 'index.php',
         dateType: 'json',
@@ -17,7 +29,7 @@
         $.each(dataarr, function(index, value) {
             $html = `
                         <a href="details.html?picid=${value.picid}" class="brand-item-hover" target="_blank">
-                            <img src="${value.indexurl}" alt="${value.title}">
+                            <img data-original="${value.indexurl}" alt="${value.title}" class="lazy">
                             <div class="brand-info"><span class="brand-name" title="${value.title}">${value.title}</span>
                                 <div class="brand-discount-pms">
                                     <span class="brand-discount"><span class="dis-num">${value.sell}</span>折起</span>
@@ -39,21 +51,10 @@
         $SJbItemdata.html($htmlS);
         $CJbItemdata.html($htmlC);
         // console.log($('.shop-sort .J-brand-item-data').find('img'));
-        $(window).on('scroll', function() {
-            var $scrolltop = $(window).scrollTop();
-            var $clientheight = $(window).height();
-            // console.log($scrolltop);
-            let $imgarr = $('.shop-sort .J-brand-item-data').find('img');
-            // console.log($imgtop);
-            $.each($imgarr, function(index, element) {
-                let $imgtop = $(element).offset().top;
-                if ($imgtop < $scrolltop + $clientheight) {
-                    $(element).eq(index).attr('src', $('img').attr('_src'));
-                }
-            })
-        });
 
     });
+
+
 
 
 }();
