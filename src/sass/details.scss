@@ -34,131 +34,182 @@ $color:#f10180;
 //         }
 //     }
 // }
-.wrapper {
-    width: 1132px;
-    margin: 0 auto;
+.product {
+    margin: 60px auto;
+    width: 1026px;
 }
 
-.product {
-    margin: 60px 0;
-    overflow: hidden;
-    .pic {
-        float: left;
-        height: 500px;
-        width: 500px;
-        .scale {
-            // overflow: hidden;
+.de-l {
+    float: left;
+    position: relative;
+    .scale {
+        width: 322px;
+        .pic-s {
+            width: 322px;
+            height: 420px;
+            margin-bottom: 10px;
+            border: 1px solid $color;
             position: relative;
-            .small {
-                width: 420px;
-                height: 420px;
-                border: 1px solid #ccc;
-                float: left;
-                position: relative;
-                text-align: center;
-                .smallpic {
-                    width: 332px;
-                    height: 420px;
-                }
-                .movebox {
-                    height: 100px;
-                    width: 100px;
-                    background-color: rgba(48, 45, 40, 0.383);
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    display: none;
-                }
+            &>img {
+                display: block;
+                height: 100%;
+                width: 100%;
             }
-            .big {
-                width: 500px;
-                height: 500px;
-                border: 1px solid #ccc;
-                background-color: #fff;
-                float: left;
-                display: none;
-                overflow: hidden;
+            .small {
+                background-color: $color;
+                // width: 100px;
+                // height: 100px;
                 position: absolute;
                 top: 0;
                 left: 0;
-                z-index: 10;
-                .bigpic {
-                    position: absolute;
-                    top: 0;
-                    left: -130px;
-                    height: 800px;
-                    width: 800px;
-                }
+                visibility: hidden;
+                cursor: move;
+                opacity: .1;
             }
         }
-        .show {
-            display: block!important;
-        }
-        .hide {
-            display: none;
-        }
-    }
-    .de-r {
-        width: 600px;
-        float: left;
-        margin-left: 30px;
-        .title {
-            font-size: 16px;
-            color: #333;
-            padding: 20px 0;
-            line-height: 2em;
-        }
-        .price {
-            background: url(../img/detail_price_bg_l-hash-8ee789be.png) no-repeat;
-            color: #666;
-            padding: 30px 0;
-            font-size: 16px;
-        }
-        .choosebtn {
+        .iconlist {
+            width: 100%;
+            height: 58px;
+            // position: relative;
+            overflow: hidden;
             a {
                 display: block;
-            }
-            margin: 20px;
-            .choose-amount {
-                position: relative;
-                float: left;
-                width: 58px;
-                height: 45px;
-                margin-right: 10px;
-                border: 1px solid #ccc;
-                input {
-                    display: block;
-                    width: 43px;
-                    height: 42px;
-                    text-align: center;
-                    border: none;
-                    outline: none;
+                width: 25px;
+                height: 100%;
+                font-size: 40px;
+                color: $color;
+                background-color: #fff;
+                position: absolute;
+                top: 50%;
+                margin-top: -29px;
+                z-index: 10;
+                &.left {
+                    left: -5px;
                 }
-                a {
-                    text-align: center;
-                    line-height: 22px;
-                    color: #666;
-                    width: 15px;
-                    height: 22px;
-                    position: absolute;
+                &.right {
                     right: 0;
-                    border-left: 1px solid #ccc;
-                    background: #f1f1f1;
-                    border-bottom: 1px solid #ccc;
-                    &:nth-of-type(1) {
-                        top: 0px;
-                    }
-                    &:nth-of-type(2) {
-                        top: 23px;
+                }
+            }
+            .movelist {
+                width: 300px;
+                margin: 0 25px;
+                height: 56px;
+                // overflow: hidden;
+                ul {
+                    position: absolute;
+                    top: 0px;
+                    left: 33px;
+                    height: 56px;
+                    li {
+                        float: left;
+                        margin: 0 13px 5px 0;
+                        height: 54px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        &:hover {
+                            border: 1px solid $color;
+                        }
+                        img {
+                            width: 54px;
+                        }
                     }
                 }
             }
-            .button-box .ui-btn-large {
-                width: 198px;
+        }
+    }
+    .big-box {
+        width: 500px;
+        height: 500px;
+        border: 1px solid $color;
+        position: absolute;
+        left: 380px;
+        top: 0;
+        overflow: hidden;
+        visibility: hidden;
+        z-index: 9;
+        .pic-b {
+            // width: 200%;
+            // height: 200%;
+            // position: relative;
+            img {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200%;
+                height: 200%;
             }
-            button.ui-btn-loading {
-                width: 200px;
+        }
+    }
+}
+
+// .show {
+//     display: block!important;
+// }
+// .hide {
+//     display: none;
+// }
+.de-r {
+    width: 600px;
+    float: left;
+    margin-left: 30px;
+    .title {
+        font-size: 16px;
+        color: #333;
+        padding: 20px 0;
+        line-height: 2em;
+    }
+    .price {
+        background: url(../img/detail_price_bg_l-hash-8ee789be.png) no-repeat;
+        color: #666;
+        padding: 30px 0;
+        font-size: 16px;
+    }
+    .choosebtn {
+        a {
+            display: block;
+        }
+        margin: 20px;
+        .choose-amount {
+            position: relative;
+            float: left;
+            width: 58px;
+            height: 45px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            input {
+                display: block;
+                width: 43px;
+                height: 42px;
+                text-align: center;
+                border: none;
+                outline: none;
             }
+            a {
+                text-align: center;
+                line-height: 22px;
+                color: #666;
+                width: 15px;
+                height: 22px;
+                position: absolute;
+                right: 0;
+                border-left: 1px solid #ccc;
+                background: #f1f1f1;
+                border-bottom: 1px solid #ccc;
+                &:nth-of-type(1) {
+                    top: 0px;
+                }
+                &:nth-of-type(2) {
+                    top: 23px;
+                }
+            }
+        }
+        .button-box .ui-btn-large {
+            width: 198px;
+        }
+        button.ui-btn-loading {
+            width: 200px;
         }
     }
 }
@@ -184,11 +235,12 @@ $color:#f10180;
 }
 
 .iconlist {
-    width: 100%;
+    width: 322px;
     height: 58px;
-    position: relative;
+    position: absolute;
+    top: 440px;
     overflow: hidden;
-    margin-top: 20px;
+    margin-bottom: 20px;
     a {
         display: block;
         width: 25px;
@@ -219,7 +271,7 @@ $color:#f10180;
             height: 56px;
             li {
                 float: left;
-                margin: 0 5px 5px 0;
+                margin: 0 12px 5px 0;
                 height: 54px;
                 white-space: nowrap;
                 overflow: hidden;

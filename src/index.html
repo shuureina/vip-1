@@ -26,7 +26,7 @@
 
 <body>
     <!-- 头部导航 -->
-    <div id="top"></div>
+    <!-- <div id="top"></div> -->
     <header id="vip-common-header" class="header vip-common-header clearfix adapt-open">
         <div class="top-nav">
             <div class="header-inner" id="J_top_nav">
@@ -1389,7 +1389,7 @@
                 </div>
                 <div class="sidebarcom-top">
                     <div id="J_sbar_top">
-                        <a href="#top">
+                        <a href="javascript:;">
                             <i class="i-sidebarcom-top vipSidebarFont"><svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-top"></use>
                                   </svg></i>
@@ -1501,32 +1501,9 @@
     <script src="./script/js/jquery.slider.js"></script>
     <script src="./script/js/index.js"></script>
     <script>
-        $(window).on('scroll', function() {
-            let $scrolltop = $(window).scrollTop();
-            let $imgtop = $('.index-content-wrp').offset().top;
-            let $headerheight = $('#vip-common-header').height();
-            if ($scrolltop > $headerheight) { //头部导航条的固定定位
-                $('#J_main_nav').addClass('main-nav-be-fixedtrans');
-            } else {
-                $('#J_main_nav').removeClass('main-nav-be-fixedtrans');
-            }
-            if ($scrolltop > $imgtop) { //左侧的固定定位
-                $('#J-index-nav-sort').addClass('is-lift-nav-fixed');
-            } else {
-                $('#J-index-nav-sort').removeClass('is-lift-nav-fixed');
-            }
-        })
         $('.focus-banner').slider();
     </script>
-    <script>
-        $(function() {
-            $('img.lazy').lazyload({
-                effect: 'fadeIn'
-            });
-            // console.log($('img'));
-            $(".footer").load("footer.html");
-        });
-    </script>
+
 </body>
 
 </html>

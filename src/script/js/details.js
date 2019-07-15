@@ -14,13 +14,13 @@
             picid: picid
         }
     }).done(function(data) {
-        // console.log(data);
-        $('.smallpic').attr('src', data.url);
-        $('.smallpic').attr('picid', data.picid);
-        $('.bigpic').attr('src', data.url);
+        console.log(data);
+        $('.pic-s img').attr('src', data.url);
+        $('.pic-s img').attr('picid', data.picid);
+        $('.pic-b img').attr('src', data.url);
         $('.title h2').html(data.title);
         $('.price span').html(data.price);
-        let surlarr = data.simgurls.split(',');
+        let surlarr = data.bimgurls.split(',');
         // console.log(surlarr);
         let templist = '';
         $.each(surlarr, function(index, value) {
@@ -29,10 +29,9 @@
         $('.movelist ul').append(templist);
     })
 
-    //3.放大镜效果
 
 
-    //4.购物车存储核心：商品的sid和商品的数量--cookie或者localStorage进行存储
+    //3.购物车存储核心：商品的sid和商品的数量--cookie或者localStorage进行存储
     var arrid = []; //商品的Id
     var arrnum = []; //商品的数量
     function cookietoString() {
@@ -41,9 +40,9 @@
             arrnum = $.cookie('cookienum').split(','); //存储商品的数量
         }
     }
-    console.log(valnum);
+    // console.log(valnum);
     $('#sub-btn').on('click', function() { //点击加入购物车按钮
-        var $picid = $(this).parents('.product').find('.smallpic').attr('picid'); //
+        var $picid = $(this).parents('.product').find('.pic-s img').attr('picid'); //
         cookietoString() //获得cookietoString存储数据
             // console.log($.inArray($picid, arrid));
             //判断当前的picid是否存在cookie中
@@ -75,6 +74,8 @@
             count--;
         }, 1000);
     });
+
+    //4.数量的加减
     $('.num-add').on('click', function() {
         // addnum++;
         $("#count").val(function() {
@@ -100,3 +101,96 @@
 
 
 }();
+//4.放大镜效果
+;
+(function($) {
+    const $small = $('.pic-s');
+    const $smallpic = $('.pic-s img');
+    const $bigpic = $('.pic-b img');
+    const $big = $('.big-box');
+    const $movebox = $('.pic-s .small');
+    const $product = $('.product');
+    const $icnlists = $('.movelist ul');
+    const $leftbtn = $('.left');
+    const $rightbtn = $('.right');
+    let $num = 4; //m默认小图块显示4张图片
+
+    let $wmove = $small.width() * $big.width() / $bigpic.width();
+    let $hmove = $small.height() * $big.height() / $bigpic.height();
+    let $scale = $bigpic.width() / $small.width();
+
+    $movebox.width($wmove);
+    $movebox.height($hmove);
+
+    //1.鼠标移动  放大镜
+    $small.hover(function() {
+        $big.css("visibility", "visible");
+        $movebox.css("visibility", "visible");
+        $(this).on('mousemove', function(ev) {
+            let $left = ev.clientX - $product.offset().left - $movebox.width() / 2;
+            let $top = ev.clientY - $product.offset().top - $movebox.height() / 2;
+            if ($left < 0) {
+                $left = 0;
+            } else if ($left >= $(this).width() - $movebox.width()) {
+                $left = $(this).width() - $movebox.width();
+            }
+            if ($top < 0) {
+                $top = 0;
+            } else if ($top >= $(this).height() - $movebox.height()) {
+                $top = $(this).height() - $movebox.height();
+            }
+            $movebox.css({
+                left: $left,
+                top: $top
+            });
+            $bigpic.css({
+                left: -$left * $scale,
+                top: -$top * $scale
+            });
+        })
+    }, function() {
+        $big.css("visibility", "hidden");
+        $movebox.css("visibility", "hidden");
+    });
+
+    //2.1小图滚动和点击切换相应图标
+    $icnlists.on('click mouseover', 'li', function() {
+        let $changeimg = $(this).find('img').attr('src');
+        // console.log($(this).find('img'));
+        $smallpic.attr('src', $changeimg);
+        $bigpic.attr('src', $changeimg);
+    });
+    //2.2点击左右箭头
+    $leftbtn.on('click', function() {
+        let $listitems = $icnlists.find('li');
+        let $listitemw = $listitems.eq(0).width() + 13; //每个li的宽度（包括margin）
+        console.log($listitemw);
+
+        if ($listitems.length > $num) { //ul里的li的数量>num
+            $num++;
+            if ($listitems.length === $num) {
+                $leftbtn.css('color', '#fff');
+                $rightbtn.css('color', '#f10180');
+            }
+            $icnlists.animate({ left: -($num - 4) * $listitemw + $leftbtn.width() + 8 })
+            console.log($num);
+        }
+    });
+    console.log($num);
+    $rightbtn.on('click', function() {
+        console.log($num);
+
+        let $listitems = $icnlists.find('li');
+        let $listitemw = $listitems.eq(0).width() + 13; //每个li的宽度（包括margin）
+        console.log($listitemw);
+        if ($num > 4) { //ul里的li的数量>num
+            $num--;
+            if ($num === 4) {
+                $rightbtn.css('color', '#fff');
+                $leftbtn.css('color', '#f10180');
+            }
+            $icnlists.animate({ left: -($num - 4) * $listitemw + $rightbtn.width() + 8 })
+        }
+    });
+
+})(jQuery);

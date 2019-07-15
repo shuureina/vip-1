@@ -3,18 +3,20 @@
     const phpurl = 'http://10.31.158.73:8080/vip/php/';
     const $SJbItemdata = $('.shop-sort .J-brand-item-data');
     const $CJbItemdata = $('.shop-coming .J-brand-item-data');
+    const $indexfloor = $('.J-index-floor');
+    const $indexnavitem = $('.index-nav-item');
+    const $gototop = $('#J_sbar_top');
+    //1.给图片添加懒加载
     $(window).on('scroll', function() {
-
         let $imgarr = $('.shop-sort .J-brand-item-data').find('img');
-        // console.log($imgarr);
         $.each($imgarr, function(index, element) {
-            // console.log(element);
             $(element).lazyload({
                 effect: 'fadeIn'
             });
-
         })
     });
+
+    //2.从后端获取数据并渲染
     $.ajax({
         url: phpurl + 'index.php',
         dateType: 'json',
@@ -55,6 +57,55 @@
     });
 
 
+    //3.1触发滚动条事件 显示隐藏的楼梯
+    $(window).on('scroll', function() {
+        let $scrolltop = $(window).scrollTop();
+        let $imgtop = $('.index-content-wrp').offset().top;
+        let $headerheight = $('#vip-common-header').height();
+        if ($scrolltop > $headerheight) { //头部导航条的固定定位
+            $('#J_main_nav').addClass('main-nav-be-fixedtrans');
+        } else {
+            $('#J_main_nav').removeClass('main-nav-be-fixedtrans');
+        }
+        if ($scrolltop > $imgtop) { //左侧的固定定位
+            $('#J-index-nav-sort').addClass('is-lift-nav-fixed');
+        } else {
+            $('#J-index-nav-sort').removeClass('is-lift-nav-fixed');
+        }
 
+        //滚到某个的楼层，给其对应的楼梯添加属性
+        $indexfloor.each(function(index, element) {
+            // console.log(index);
+            // console.log($scrolltop);
+            let $floortop = $indexfloor.eq(index).offset().top;
+            if ($floortop >= $scrolltop) {
+                $indexnavitem.removeClass('curr'); //滚动时所有楼梯去掉curr
+                $indexnavitem.eq(index).addClass('curr'); //滚到某个的楼层，给其对应的楼梯添加curr
+                return false;
+            }
+        });
+
+    });
+
+    //3.2给楼梯添加点击事件 点击跳到对应的楼层
+    $indexnavitem.on('click', function() {
+        $(this).addClass('curr').siblings().removeClass('curr');
+        let $floortop = $indexfloor.eq($(this).index()).offset().top; //对应楼层的top值
+        //将对应楼层的top值给滚动条 animate
+        $('html,body').animate({
+            scrollTop: $floortop
+        });
+
+    });
+
+
+    //回到顶部
+    $gototop.on('click', function() {
+        $('html,body').animate({
+            scrollTop: 0
+        });
+    });
+    //加载底部内容
+    $(".footer").load("footer.html");
 
 }();

@@ -2033,7 +2033,13 @@ input#submit {
 }
 
 .c-form-error {
-    min-height: 40px
+    min-height: 40px;
+    position: absolute;
+    top: 192px;
+    &.hidden {
+        visibility: hidden;
+        opacity: 0;
+    }
 }
 
 .c-form-error .u-input-tip {
