@@ -6,14 +6,19 @@
     const $indexfloor = $('.J-index-floor');
     const $indexnavitem = $('.index-nav-item');
     const $gototop = $('#J_sbar_top');
+
     //1.给图片添加懒加载
     $(window).on('scroll', function() {
-        let $imgarr = $('.shop-sort .J-brand-item-data').find('img');
-        $.each($imgarr, function(index, element) {
-            $(element).lazyload({
-                effect: 'fadeIn'
-            });
-        })
+        // let $imgarr = $('.shop-sort .J-brand-item-data').find('img');
+        // $.each($imgarr, function(index, element) {
+        //     $(element).lazyload({
+        //         effect: 'fadeIn'
+        //     });
+        // })
+        $('img').lazyload({
+            effect: 'fadeIn'
+
+        });
     });
 
     //2.从后端获取数据并渲染
@@ -97,7 +102,7 @@
         });
 
     });
-
+    // $('#J_main_nav_category').hover(function() { $('#J_main_nav_category_data').css('display', 'block') }, function() { 'display', 'none' });
 
     //回到顶部
     $gototop.on('click', function() {
